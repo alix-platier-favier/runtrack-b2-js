@@ -11,10 +11,14 @@ export default class Game {
 
     startNewGame()
     {
+        const play = document.getElementById("play");
+        play.addEventListener("click", () => {
+            this.initializeGame();
+            this.registerMove();
+        });
         this.player1.setIsCurrentPlayer(true);
         this.player2.setIsCurrentPlayer(false);
-        this.board.initializeBoard();
-        this.board.displayBoard();
+        this.currentTurn = this.player1;
     }
 
     makeMove(row, col)
@@ -69,8 +73,5 @@ export default class Game {
 
         const nullDiv = document.getElementById("message");
         nullDiv.textContent = `Match nul !`;
-
-        if(this.board.checkGameOver)
-
     } 
 }  
