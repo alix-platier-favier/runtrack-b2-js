@@ -1,5 +1,3 @@
-import Player from "./class/Player.js";
-import Board from "./class/Board.js";
 
 export default class Game {
     constructor(player1, player2, board) {
